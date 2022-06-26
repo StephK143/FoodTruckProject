@@ -31,7 +31,7 @@ public class FoodTruckApp {
 	}
 
 	public FoodTruck[] userEntries() {
-		boolean trigger = true;
+		boolean endOrNot = true;
 		int rating = 0;
 		for (i = 0; i < fleetOfFoodTrucks.length; i++) {
 
@@ -46,17 +46,17 @@ public class FoodTruckApp {
 				System.out.println("what is the type of food?");
 				String type = kb.nextLine();
 
-				do  {
+				do {
 					System.out.println("On a scale of 1-5 how would you rate this food truck?");
-				
-				rating = kb.nextInt();
-				kb.nextLine();
-				 if (rating >= 1 && rating <= 5) {
-					 trigger = false;
-				}else  {
-					System.out.println("Not a valid entry");
-				}
-				} while (trigger);
+
+					rating = kb.nextInt();
+					kb.nextLine();
+					if (rating >= 1 && rating <= 5) {
+						endOrNot = false;
+					} else {
+						System.out.println("Not a valid entry");
+					}
+				} while (endOrNot);
 
 				makeTruck = new FoodTruck(name, type, rating);
 
@@ -160,8 +160,7 @@ public class FoodTruckApp {
 			}
 
 		}
-		System.out.println(highestRate);
-
+		System.out.println("The food truck in your area with the highest rating is:");
 		System.out.println(fleetOfFoodTrucks[count].toString());
 	}
 }
