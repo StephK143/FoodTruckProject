@@ -7,7 +7,7 @@ public class FoodTruckApp {
 	FoodTruck[] fleetOfFoodTrucks = new FoodTruck[5];
 
 	int i = 0;
-	int choice = 1;
+	int choice = 0;
 	boolean keepGoing = true;
 
 	public static void main(String[] args) {
@@ -157,7 +157,7 @@ public class FoodTruckApp {
 				highestRating = fleetOfFoodTrucks[i].getRating();
 				highestRate = fleetOfFoodTrucks[i].getName();
 				count = i;
-			}
+			} 
 
 		}
 		System.out.println("The food truck in your area with the highest rating is:");
